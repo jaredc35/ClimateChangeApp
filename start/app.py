@@ -7,7 +7,7 @@ from plot_funs import plot_country, plot_world
 from asyncio import sleep
 # Get temperature data frame
 temperatures = pd.read_csv(Path(__file__).parent/"temperatures.csv")
-static_content_url = "https://github.com/jaredc35/ClimateChangeApp/tree/main/start/www"
+static_content_url = "https://github.com/jaredc35/ClimateChangeApp/blob/main/start/www"
 
 
 # Values for dropdown
@@ -48,11 +48,11 @@ app_ui = ui.page_fluid(
     ),
     ui.row(
         ui.column(6, ui.row(
-            ui.column(2, ui.img(src=f"{static_content_url}/developer.png", width="32px"), style="text-align: center"),
+            ui.column(2, ui.img(src=f"{static_content_url}/developer.png?raw=true", width="32px"), style="text-align: center"),
             ui.column(10, ui.p("Jared Conway", style=font_style)),
         ),
           ui.row(
-                ui.column(2, ui.img(src=f"{static_content_url}/address2.png", width="32px"), style="text-align: center;"),
+                ui.column(2, ui.img(src=f"{static_content_url}/address2.png?raw=true", width="32px"), style="text-align: center;"),
                 ui.column(10, ui.p('Somewhere in America', style = font_style))
                 ),ui.row(
                 ui.column(2, ),
@@ -63,11 +63,11 @@ app_ui = ui.page_fluid(
                 ui.column(10, ui.p('USA', style = font_style))
                 ),
                       ui.row(
-                ui.column(2, ui.img(src=f"{static_content_url}/mail2.png", width="32px"), style="text-align: center;"),
+                ui.column(2, ui.img(src=f"{static_content_url}/mail2.png?raw=true", width="32px"), style="text-align: center;"),
                 ui.column(10, ui.a(ui.p('jaredt.conway@gmail.com'), href="mailto:jaredt.conway@gmail.com", style = font_style))
                 ),
     ),
-    ui.column(6, ui.a(ui.img(src=f"{static_content_url}/course_logo_300x169.png"), href="https://www.udemy.com" ), style='text-align:center')
+    ui.column(6, ui.a(ui.img(src=f"{static_content_url}/course_logo_300x169.png?raw=true"), href="https://www.udemy.com" ), style='text-align:center')
     ), style='background-color: #fff'
 )
 
@@ -102,7 +102,7 @@ def server(input, output, session):
     @output
     @render.ui
     def color_map():
-        img = ui.img(src=f"{static_content_url}/colormap.png")
+        img = ui.img(src=f"{static_content_url}/colormap.png?raw=true")
         return img
 
 app = App(app_ui, server)

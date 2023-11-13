@@ -31,7 +31,8 @@ app_ui = ui.page_fluid(
         ui.column(6, 
                 ui.row(
                         ui.column(6,ui.input_slider(id='year', label="Choose a Year", min=temp_year_min, 
-                                     max=temp_year_max, value=temp_year_min, step=1, animate=False)),
+                                     max=temp_year_max, value=temp_year_min, step=1, animate=False, sep="",
+                                     ticks=True)),
                         ui.column(6, ui.output_ui('color_map')),
                       
                     )
